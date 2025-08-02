@@ -15,17 +15,26 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
           <p className="mb-5">{desc1}</p>
           <p className="w-11/12">{desc2}</p>
         </div>
-        <div className="relative mx-auto hidden  max-w-[550px] md:block md:w-1/2">
-          <Image src={image} alt={title} height={height} width={width} className="dark:hidden " />
-          <Image
-            src={imageDark}
-            alt={title}
-            height={height}
-            width={width}
-            layout="intrinsic"
-            className="hidden dark:block object-cover"
-          />
+        <div className="relative mx-auto hidden md:block md:w-1/2">
+          <div className="mx-auto w-[160px] sm:w-[200px] md:w-[240px] lg:w-[150px] xl:w-[260px]">
+            <Image
+              src={image}
+              alt={title}
+              width={width}
+              height={height}
+              className="w-full h-auto dark:hidden"
+            />
+            <Image
+              src={imageDark}
+              alt={title}
+              width={width}
+              height={height}
+              className="hidden w-full h-auto dark:block object-cover"
+            />
+          </div>
         </div>
+
+
       </div>
     </>
   );

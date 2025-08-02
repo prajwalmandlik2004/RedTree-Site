@@ -233,13 +233,19 @@ const Signin = () => {
               <div className="flex flex-wrap items-center gap-10 md:justify-between xl:gap-15">
                 <div className="flex flex-wrap gap-4 md:gap-10">
                   <div className="mb-4 flex items-center">
-                    <input
+                    {/* <input
                       id="default-checkbox"
                       type="checkbox"
                       className="peer sr-only"
+                    /> */}
+                    <input
+                      id="default-checkbox"
+                      type="checkbox"
+                      className="mt-1 h-5 w-5 cursor-pointer accent-primary dark:accent-white"
                     />
-                    <span className="group mt-1 flex h-5 min-w-[20px] items-center justify-center rounded border-gray-300 bg-gray-100 text-blue-600 peer-checked:bg-primary dark:border-gray-600 dark:bg-gray-700">
+                    {/* <span className="group mt-1 flex h-5 min-w-[20px] items-center justify-center rounded border-gray-300 bg-gray-100 text-blue-600 peer-checked:bg-primary dark:border-gray-600 dark:bg-gray-700">
                       <svg
+                        
                         className="opacity-0 peer-checked:group-[]:opacity-100"
                         width="10"
                         height="8"
@@ -254,7 +260,7 @@ const Signin = () => {
                           fill="white"
                         />
                       </svg>
-                    </span>
+                    </span> */}
                     <label
                       htmlFor="default-checkbox"
                       className="flex max-w-[425px] cursor-pointer select-none pl-3"
@@ -265,7 +271,7 @@ const Signin = () => {
 
                   <button
                     onClick={resetPassword}
-                    className="hover:text-primary"
+                    className="hover:text-primary mb-4"
                   >
                     Forgot Password ?
                   </button>

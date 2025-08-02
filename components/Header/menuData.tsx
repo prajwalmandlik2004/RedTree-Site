@@ -31,11 +31,11 @@ const menuData: Menu[] = [
   //   newTab: false,
   //   path: "/docs",
   // },
-  {
-    id: 3,
-    title: "Pages",
-    newTab: false,
-    submenu: [
+  // {
+  //   id: 3,
+  //   title: "Pages",
+  //   newTab: false,
+  //   submenu: [
       // {
       //   id: 31,
       //   title: "Templates",
@@ -54,18 +54,18 @@ const menuData: Menu[] = [
       //   newTab: false,
       //   path: "/auth/signup",
       // },
-      {
-        id: 34,
-        title: "Pricing",
-        newTab: false,
-        path: "/",
-      },
-      {
-        id: 35,
-        title: "Docs",
-        newTab: false,
-        path: "/docs",
-      },
+      // {
+      //   id: 34,
+      //   title: "Pricing",
+      //   newTab: false,
+      //   path: "/#pricing",
+      // },
+      // {
+      //   id: 35,
+      //   title: "Docs",
+      //   newTab: false,
+      //   path: "/docs",
+      // },
       // {
       //   id: 35.1,
       //   title: "Support",
@@ -78,9 +78,15 @@ const menuData: Menu[] = [
       //   newTab: false,
       //   path: "/error",
       // },
-    ],
-  },
+  //   ],
+  // },
 
+  {
+    id: 7,
+    title: "Pricing",
+    newTab: false,
+    path: "/#pricing",
+  },
   {
     id: 4,
     title: "Support",

@@ -3,33 +3,43 @@ import { FeatureTab } from "@/types/featureTab";
 const featuresTabData: FeatureTab[] = [
   {
     id: "tabOne",
-    title: "Full-Powered Experience for Desktop Browsing.",
-    desc1: `The desktop view delivers a rich, expansive layout optimized for large screens, ensuring maximum functionality and detailed content display.`,
-    desc2: `With multi-column layouts and high-resolution visuals, it offers users a comprehensive and immersive experience on larger devices.`,
-    image: "/images/features/desktop_view.webp",
-    imageDark: "/images/features/desktop_view.webp",
-    width:1920,
-    height:1024
+    title: "Smart Camera with Instant Modal",
+    desc1: `Capture photos and videos effortlessly with RedTree’s intuitive camera interface. Launches instantly into full-screen preview for seamless use.`,
+    desc2: `After capture, access the RT Modal to rename, delete, save, or add notes—right from the same screen.`,
+    image: "/images/mockups/cam_one.png",
+    imageDark: "/images/mockups/cam_one.png",
+    width: 1080,
+    height: 1920
   },
   {
     id: "tabTwo",
-    title: "Perfect Balance for On-the-Go Browsing.",
-    desc1: `The tablet view offers an adaptable layout for medium-sized screens, providing clear content and easy navigation with touch-friendly features.`,
-    desc2: `Designed for mobility, it delivers a responsive experience without sacrificing essential functionality, ideal for users transitioning between devices.`,
-    image: "/images/features/tablet_view.webp",
-    imageDark: "/images/features/tablet_view.webp",
-    width:768,
-    height:1024
+    title: "Personalize Your Preferences",
+    desc1: `Customize your RedTree experience via the Parameters screen—set file names, delay timers, aspect ratios, and language formats.`,
+    desc2: `Fine-tune how your captured media behaves and looks, making the app truly yours.`,
+    image: "/images/mockups/parameters.png",
+    imageDark: "/images/mockups/parameters.png",
+    width: 1080,
+    height: 1920
   },
   {
     id: "tabThree",
-    title: "Effortless Access in the Palm of Your Hand.",
-    desc1: `The mobile view offers a streamlined, single-column layout designed for small screens, ensuring easy navigation and quick access to content.`,
-    desc2: `Optimized for speed, it features larger buttons and simplified menus, providing an intuitive browsing experience for users on the go.`,
-    image: "/images/features/mobile_view.webp",
-    imageDark: "/images/features/mobile_view.webp",
-    width:360,
-    height:480
+    title: "Powerful Tree-Style File Manager",
+    desc1: `Organize all your media files within a dynamic tree-view structure. Expand folders, move files, and manage data efficiently.`,
+    desc2: `Perform advanced actions like rename, duplicate, delete, or annotate—all in one streamlined interface.`,
+    image: "/images/mockups/fm_one.png",
+    imageDark: "/images/mockups/fm_one.png",
+    width: 1080,
+    height: 1920
+  },
+  {
+    id: "tabFour",
+    title: "Image Viewer with Smart Tools",
+    desc1: `Preview, zoom, crop, or annotate your images with ease. View image details and navigate between files smoothly.`,
+    desc2: `Enable multi-select mode for batch operations like delete, move, or share, enhancing productivity.`,
+    image: "/images/mockups/image_list.png",
+    imageDark: "/images/mockups/image_list.png",
+    width: 1080,
+    height: 1920
   },
 ];
 

@@ -41,7 +41,7 @@ const Contact = () => {
 
   return (
     <>
-      
+
       <section id="support" className="px-4 md:px-8 2xl:px-0">
         <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
           <div className="absolute left-0 top-0 -z-1 h-2/3 w-full rounded-lg bg-gradient-to-t from-transparent to-[#fbd7d947] dark:bg-gradient-to-t dark:to-[#252A42]"></div>
@@ -130,9 +130,9 @@ const Contact = () => {
                     <input
                       id="default-checkbox"
                       type="checkbox"
-                      className="peer sr-only cursor-pointer"
+                      className="mt-1 h-5 w-5 cursor-pointer accent-primary dark:accent-white"
                     />
-                    <span className="group mt-2 flex h-5 min-w-[20px] items-center justify-center rounded border-gray-300 bg-gray-100 text-blue-600 peer-checked:bg-primary dark:border-gray-600 dark:bg-gray-700">
+                    {/* <span className="group mt-2 flex h-5 min-w-[20px] items-center justify-center rounded border-gray-300 bg-gray-100 text-blue-600 peer-checked:bg-primary dark:border-gray-600 dark:bg-gray-700">
                       <svg
                         className="opacity-0 peer-checked:group-[]:opacity-100"
                         width="10"
@@ -148,7 +148,7 @@ const Contact = () => {
                           fill="white"
                         />
                       </svg>
-                    </span>
+                    </span> */}
                     <label
                       htmlFor="default-checkbox"
                       className="flex max-w-[425px] cursor-pointer select-none pl-5"
@@ -231,7 +231,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      
+
     </>
   );
 };

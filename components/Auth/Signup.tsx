@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { signup , googleSignup , signUpWithGithub} from "@/utils/auth"; // Import signUp function
+import { signup, googleSignup, signUpWithGithub } from "@/utils/auth"; // Import signUp function
 
 import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
 
@@ -171,7 +171,7 @@ const Signup = () => {
                     </defs>
                   </svg>
                 </span>
-               Google
+                Google
               </button>
 
               <button
@@ -203,79 +203,85 @@ const Signup = () => {
             </div>
 
             {/* <form> */}
-              <div className="mb-7.5 flex flex-col gap-7.5 lg:mb-12.5 lg:flex-row lg:justify-between lg:gap-14">
-                <input
-                  name="firstName"
-                  type="text"
-                  placeholder="First name"
-                  value={data.firstName}
-                  // onChange={(e) =>
-                  //   setData({ ...data, [e.target.name]: e.target.value })
-                  // }
-                  onChange={handleChange}
-                  className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
-                />
+            <div className="mb-7.5 flex flex-col gap-7.5 lg:mb-12.5 lg:flex-row lg:justify-between lg:gap-14">
+              <input
+                name="firstName"
+                type="text"
+                placeholder="First name"
+                value={data.firstName}
+                // onChange={(e) =>
+                //   setData({ ...data, [e.target.name]: e.target.value })
+                // }
+                onChange={handleChange}
+                className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+              />
 
-                <input
-                  name="lastName"
-                  type="text"
-                  placeholder="Last name"
-                  value={data.lastName}
-                  // onChange={(e) =>
-                  //   setData({ ...data, [e.target.name]: e.target.value })
-                  // }
-                  onChange={handleChange}
-                  className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
-                />
-              </div>
+              <input
+                name="lastName"
+                type="text"
+                placeholder="Last name"
+                value={data.lastName}
+                // onChange={(e) =>
+                //   setData({ ...data, [e.target.name]: e.target.value })
+                // }
+                onChange={handleChange}
+                className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+              />
+            </div>
 
-              <div className="mb-7.5 flex flex-col gap-7.5 lg:mb-12.5 lg:flex-row lg:justify-between lg:gap-14">
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email address"
-                  value={data.email}
-                  // onChange={(e) =>
-                  //   setData({ ...data, [e.target.name]: e.target.value })
-                  // }
-                  onChange={handleChange}
-                  className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
-                />
+            <div className="mb-7.5 flex flex-col gap-7.5 lg:mb-12.5 lg:flex-row lg:justify-between lg:gap-14">
+              <input
+                name="email"
+                type="email"
+                placeholder="Email address"
+                value={data.email}
+                // onChange={(e) =>
+                //   setData({ ...data, [e.target.name]: e.target.value })
+                // }
+                onChange={handleChange}
+                className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+              />
 
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  value={data.password}
-                  // onChange={(e) =>
-                  //   setData({ ...data, [e.target.name]: e.target.value })
-                  // }
-                  onChange={handleChange}
-                  className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
-                />
+              <input
+                name="password"
+                type="password"
+                placeholder="Password"
+                value={data.password}
+                // onChange={(e) =>
+                //   setData({ ...data, [e.target.name]: e.target.value })
+                // }
+                onChange={handleChange}
+                className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+              />
 
-                <input
-                  name="confirmPassword"
-                  type="password"
-                  placeholder="Confirm Password"
-                  value={data.confirmPassword}
-                  // onChange={(e) =>
-                  //   setData({ ...data, [e.target.name]: e.target.value })
-                  // }
-                  onChange={handleChange}
-                  className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
-                />
-              </div>
+              <input
+                name="confirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                value={data.confirmPassword}
+                // onChange={(e) =>
+                //   setData({ ...data, [e.target.name]: e.target.value })
+                // }
+                onChange={handleChange}
+                className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+              />
+            </div>
 
-              <div className="flex flex-wrap gap-10 md:justify-between xl:gap-15">
-                <div className="mb-4 flex items-center">
-                  <input
+            <div className="flex flex-wrap gap-10 md:justify-between xl:gap-15">
+              <div className="mb-4 flex items-center">
+                {/* <input
                     id="default-checkbox"
                     type="checkbox"
                     className="peer sr-only"
-                  />
-                  <span className="group mt-1 flex h-5 min-w-[20px] items-center justify-center rounded border-gray-300 bg-gray-100 text-blue-600 peer-checked:bg-primary dark:border-gray-600 dark:bg-gray-700">
+                  /> */}
+                <input
+                  id="default-checkbox"
+                  type="checkbox"
+                  className="mt-1 h-5 w-5 cursor-pointer accent-primary dark:accent-white"
+                />
+                {/* <span className="group mt-1 flex h-5 min-w-[20px] items-center justify-center rounded border-gray-300 bg-gray-100 text-blue-600 peer-checked:bg-primary dark:border-gray-600 dark:bg-gray-700">
                     <svg
+                     
                       className="opacity-0 peer-checked:group-[]:opacity-100"
                       width="10"
                       height="8"
@@ -290,49 +296,49 @@ const Signup = () => {
                         fill="white"
                       />
                     </svg>
-                  </span>
-                  <label
-                    htmlFor="default-checkbox"
-                    className="flex max-w-[425px] cursor-pointer select-none  pl-3"
-                  >
-                    Keep me signed in
-                  </label>
-                </div>
-
-                <button
-                  type="submit"
-                  onClick={handleSignup}
-                  aria-label="signup with email and password"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
+                  </span> */}
+                <label
+                  htmlFor="default-checkbox"
+                  className="flex max-w-[425px] cursor-pointer select-none  pl-3"
                 >
-                  Create Account
-                  <svg
-                    className="fill-white"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.4767 6.16664L6.00668 1.69664L7.18501 0.518311L13.6667 6.99998L7.18501 13.4816L6.00668 12.3033L10.4767 7.83331H0.333344V6.16664H10.4767Z"
-                      fill=""
-                    />
-                  </svg>
-                </button>
+                  Keep me signed in
+                </label>
               </div>
 
-              <div className="mt-12.5 border-t border-stroke py-5 text-center dark:border-strokedark">
-                <p>
-                  Already have an account ?{" "}
-                  <Link
-                    className="text-black hover:text-primary dark:text-white dark:hover:text-primary"
-                    href="/auth/signin"
-                  >
-                    Sign In
-                  </Link>
-                </p>
-              </div>
+              <button
+                type="submit"
+                onClick={handleSignup}
+                aria-label="signup with email and password"
+                className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
+              >
+                Create Account
+                <svg
+                  className="fill-white"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.4767 6.16664L6.00668 1.69664L7.18501 0.518311L13.6667 6.99998L7.18501 13.4816L6.00668 12.3033L10.4767 7.83331H0.333344V6.16664H10.4767Z"
+                    fill=""
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div className="mt-12.5 border-t border-stroke py-5 text-center dark:border-strokedark">
+              <p>
+                Already have an account ?{" "}
+                <Link
+                  className="text-black hover:text-primary dark:text-white dark:hover:text-primary"
+                  href="/auth/signin"
+                >
+                  Sign In
+                </Link>
+              </p>
+            </div>
             {/* </form> */}
           </motion.div>
         </div>
