@@ -21,8 +21,8 @@ const Hero = () => {
 
           <div className="relative flex flex-col items-center">
             <div className="relative w-full">
-              <div className="relative z-20 flex justify-center mb-[-40px] md:mb-[-50px]">
-                <div className="w-20 h-20 md:w-35 md:h-35 bg-white rounded-full p-2 shadow-lg">
+              <div className="relative z-20 flex justify-center mb-[-30px] md:mb-[-40px]">
+                <div className="w-20 h-20 md:w-30 md:h-30 bg-white rounded-full p-2 shadow-lg">
                   <div className="relative w-full h-full">
                     <Image
                       src="/images/hero/redtreelogo.png"
@@ -34,7 +34,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="relative aspect-[16/8] md:aspect-[24/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">    
+              <div className="relative aspect-[16/8] md:aspect-[22/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">    
               <Image
                 src="/images/hero/hero_bg.jpeg"
                 alt="RedTree Hero Background"
