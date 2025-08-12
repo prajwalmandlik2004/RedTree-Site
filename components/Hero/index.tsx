@@ -21,7 +21,7 @@ const Hero = () => {
 
           <div className="relative flex flex-col items-center">
             <div className="relative w-full">
-              <div className="relative z-20 flex justify-center mb-[-50px] md:mb-[-60px]">
+              <div className="relative z-20 flex justify-center mb-[-40px] md:mb-[-50px]">
                 <div className="w-20 h-20 md:w-35 md:h-35 bg-white rounded-full p-2 shadow-lg">
                   <div className="relative w-full h-full">
                     <Image
