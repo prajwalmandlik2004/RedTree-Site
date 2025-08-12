@@ -34,7 +34,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="relative aspect-[16/8] md:aspect-[20/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
+              <div className="relative aspect-[10/8] md:aspect-[20/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
                 <Image
                   src="/images/hero/hero_bg.jpeg"
                   alt="RedTree Hero Background"
