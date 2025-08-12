@@ -13,13 +13,13 @@ const Hero = () => {
     <>
       <section className="overflow-hidden pb-20 pt-20 md:pt-25 xl:pb-25 xl:pt-30">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="text-center mb-6 mt-6">
+          {/* <div className="text-center mt-6 mb-6">
             <h4 className="text-base md:text-lg font-medium text-black dark:text-white">
               Capture Moments & Organize Seamlessly with RedTree
             </h4>
-          </div>
+          </div> */}
 
-          <div className="relative flex flex-col items-center">
+          <div className="mt-3 relative flex flex-col items-center">
             <div className="relative w-full">
               <div className="relative z-20 flex justify-center mb-[-30px] md:mb-[-40px]">
                 <div className="w-20 h-20 md:w-30 md:h-30 bg-white rounded-full p-2 shadow-lg">
@@ -34,27 +34,27 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="relative aspect-[16/8] md:aspect-[22/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">    
-              <Image
-                src="/images/hero/hero_bg.jpeg"
-                alt="RedTree Hero Background"
-                fill
-                className="object-cover contrast-105 saturate-150"
-                priority
-              />
+              <div className="relative aspect-[16/8] md:aspect-[20/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
+                <Image
+                  src="/images/hero/hero_bg.jpeg"
+                  alt="RedTree Hero Background"
+                  fill
+                  className="object-cover contrast-105 saturate-150"
+                  priority
+                />
 
                 <div className="absolute inset-0 bg-black/30"></div>
 
-                <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 md:px-8 pt-8 md:pt-12">
+                <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-8 pt-8 md:pt-12">
                   <div className="max-w-4xl mt-4 md:mt-8">
                     <div className="mb-4 md:mb-6">
-                      <p className="text-white text-base md:text-xl lg:text-2xl font-medium italic leading-relaxed mb-2">
+                      <p className="text-white text-base md:text-xl lg:text-2xl font-medium italic leading-relaxed mb-2 text-left ml-8 md:ml-16">
                         "In the legends of the North,
                       </p>
-                      <p className="text-white text-base md:text-xl lg:text-2xl font-medium italic leading-relaxed mb-4">
+                      <p className="mt-3 text-white text-base md:text-xl lg:text-2xl font-medium italic leading-relaxed mb-4 text-left ml-16 md:ml-40">
                         there is a tree that sees, judges, and weeps...
                       </p>
-                      <p className="text-white text-base md:text-xl lg:text-2xl font-medium italic leading-relaxed">
+                      <p className="mt-10 text-white text-base md:text-xl lg:text-2xl font-medium italic leading-relaxed text-left ml-24 md:ml-46">
                         RedTree has no carved face, but it, too, remembers."
                       </p>
                     </div>
@@ -63,12 +63,12 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="mt-6 md:mt-8 text-center max-w-5xl">
-              <h3 className="md:text-2xl lg:text-3xl font-bold text-gray-700 dark:text-gray-300 mb-4">
+            <div className="mt-6 md:mt-8 max-w-5xl">
+              <h3 className="text-left md:text-2xl lg:text-3xl font-bold text-gray-700 dark:text-gray-300 mb-4">
                 An exclusive intelligent camera experience combined with a powerful, seamless tree-structured file system.
               </h3>
 
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+              <p className="text-center text-base md:text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Capture, name, store and manage all your memories, notes and any data like you never could imagine before.
               </p>
 
