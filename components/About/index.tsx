@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       {/* <!-- ===== About Start ===== --> */}
-      <section  className="overflow-hidden pb-20 lg:pb-25 xl:pb-30">
+      <section className="overflow-hidden pb-20 lg:pb-25 xl:pb-30">
         <div className="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
           <div className="flex items-center gap-8 lg:gap-32.5">
             <motion.div
@@ -59,16 +59,27 @@ const About = () => {
               viewport={{ once: true }}
               className="animate_right md:w-1/2"
             >
-              <span className="font-medium uppercase text-black dark:text-white">
+              {/* <span className="font-medium uppercase text-black dark:text-white">
                 <span className="mb-4 mr-4 inline-flex rounded-full bg-red-500 px-4.5 py-1 text-metatitle uppercase text-white ">
                   New
                 </span>{" "}
                 Empowering Your Vision
-              </span>
-              <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
+              </span> */}
+              <div  style={{ fontFamily: 'Times New Roman, serif' }} className="font-bold text-3xl md:text-3xl lg:text-3xl font-serif">
+                <div className="text-black dark:text-white">
+                  <span className="text-red-500">EM</span>
+                  <span className="text-black dark:text-white">POWER</span>
+                  <span className="text-red-500">ING</span>
+                </div>
+                <div className="text-black text-4xl dark:text-white mt-0 ml-8 ms-55">
+                  <span className="text-red-500">YOUR</span>
+                  <span className="text-black dark:text-white"> VISION</span>
+                </div>
+              </div>
+              <h2 className="mt-2 relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
 
                 {/* <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark"> */}
-                  Manage Your Media the Smart Way with RedTree.
+                Manage Your Media the Smart Way with RedTree.
                 {/* </span> */}
               </h2>
               {/* <p>
