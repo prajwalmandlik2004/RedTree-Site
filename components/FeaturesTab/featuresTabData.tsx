@@ -5,9 +5,9 @@ const featuresTabData: FeatureTab[] = [
     id: "tabOne",
     title: "Smart Camera with Instant Modal",
     desc1: `Capture photos and videos effortlessly with RedTree’s intuitive camera interface. Launches instantly into full-screen preview for seamless use.`,
-    desc2: `After capture, access the RT Modal to rename, delete, save, or add notes—right from the same screen.`,
-    image: "/images/mockups/cam_one.png",
-    imageDark: "/images/mockups/cam_one.png",
+    desc2: `Just after capture, automatically access the RT Modal to rename, delete, save, or add notes—right from the same screen.`,
+    image: "/images/mockups/cm_modal.png",
+    imageDark: "/images/mockups/cm_modal.png",
     width: 1080,
     height: 1920
   },
