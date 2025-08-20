@@ -49,13 +49,13 @@ const Hero = () => {
                   <div className="max-w-4xl mt-4 md:mt-8">
                     <div className="mb-4 md:mb-6">
                       <p className="text-white text-base md:text-xl lg:text-3xl font-medium italic leading-relaxed mb-2 text-left ml-8 md:ml-16" style={{ fontFamily: 'Times New Roman, serif' }}>
-                        "In the legends of the North,
+                        In the legends of the North,
                       </p>
                       <p className="mt-3 text-white text-base md:text-xl lg:text-3xl font-medium italic leading-relaxed mb-4 text-left ml-16 md:ml-40" style={{ fontFamily: 'Times New Roman, serif' }}>
                         there is a tree that sees, judges, and weeps...
                       </p>
                       <p className="mt-10 text-white text-base md:text-xl lg:text-3xl font-medium italic leading-relaxed text-left ml-24 md:ml-46" style={{ fontFamily: 'Times New Roman, serif' }}>
-                        RedTree has no carved face, but it, too, remembers."
+                        RedTree has no carved face, but it, too, remembers.
                       </p>
                     </div>
                   </div>
