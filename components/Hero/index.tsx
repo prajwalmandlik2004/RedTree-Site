@@ -68,7 +68,7 @@ const Hero = () => {
                 An exclusive intelligent camera experience combined with a powerful, seamless tree-structured file system.
               </h3>
 
-              <h3 className="text-center font-bold md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-400 mb-6 leading-relaxed md:ms-30">
+              <h3 className="text-center font-bold md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-6 leading-relaxed md:ms-30">
                 Capture, name, store and manage all your images, photos, notes, files and any data like you never could imagine before.
               </h3>
 
