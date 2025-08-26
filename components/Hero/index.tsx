@@ -19,9 +19,9 @@ const Hero = () => {
             </h4>
           </div> */}
 
-          <div className="mt-3 relative flex flex-col items-center">
+          <div className="mt-10 ms-3 relative flex flex-col items-center">
             <div className="relative w-full">
-              <div className="relative z-20 flex justify-center mb-[-30px] md:mb-[-40px]">
+              {/* <div className="relative z-20 flex justify-center mb-[-30px] md:mb-[-40px]">
                 <div className="w-20 h-20 md:w-30 md:h-30 bg-white rounded-full p-2 shadow-lg">
                   <div className="relative w-full h-full">
                     <Image
@@ -32,9 +32,9 @@ const Hero = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="relative aspect-[10/8] md:aspect-[20/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
+              <div className="relative aspect-[10/8] md:aspect-[22/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
                 <Image
                   src="/images/hero/hero_bg.jpeg"
                   alt="RedTree Hero Background"
@@ -46,15 +46,15 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-black/30"></div>
 
                 <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-8 pt-8 md:pt-12">
-                  <div className="max-w-4xl mt-4 md:mt-8">
+                  <div className="max-w-4xl -mt-10">
                     <div className="mb-4 md:mb-6">
-                      <p className="text-white text-base md:text-xl lg:text-3xl font-medium italic leading-relaxed mb-2 text-left ml-8 md:ml-16" style={{ fontFamily: 'Times New Roman, serif' }}>
+                      <p className="text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed mb-2 text-left ml-8 md:ml-16" style={{ fontFamily: 'Times New Roman, serif' }}>
                         In the legends of the North,
                       </p>
-                      <p className="mt-3 text-white text-base md:text-xl lg:text-3xl font-medium italic leading-relaxed mb-4 text-left ml-16 md:ml-40" style={{ fontFamily: 'Times New Roman, serif' }}>
+                      <p className="mt-3 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed mb-3 text-left ml-16 md:ml-40" style={{ fontFamily: 'Times New Roman, serif' }}>
                         there is a tree that sees, judges, and weeps...
                       </p>
-                      <p className="mt-10 text-white text-base md:text-xl lg:text-3xl font-medium italic leading-relaxed text-left ml-24 md:ml-46" style={{ fontFamily: 'Times New Roman, serif' }}>
+                      <p className="mt-6 md:mt-10 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed text-left ml-20 md:ml-46 whitespace-normal lg:whitespace-nowrap" style={{ fontFamily: 'Times New Roman, serif' }}>
                         RedTree has no carved face, but it, too, remembers.
                       </p>
                     </div>
