@@ -16,13 +16,13 @@ const AnimatedButtonCircle = () => {
 
 
   const buttons = [
-    { icon: CloudUpload, label: "Backup and Sync", color: "bg-yellow-400" },
+    { icon: CloudUpload, label: "Sync", color: "bg-yellow-400" },
     { icon: Folder, label: "RT Manager", color: "bg-green-500" },
-    { icon: MicIcon, label: "Voice Memo", color: "bg-violet-400" },
+    { icon: MicIcon, label: "Voice", color: "bg-violet-400" },
     { icon: Search, label: "Search", color: "bg-gray-600" },
     { icon: Settings, label: "Settings", color: "bg-red-500" },
     { icon: Pin, label: "Annotation", color: "bg-orange-500" },
-    { icon: Edit, label: "Text Memo", color: "bg-blue-400" },
+    { icon: Edit, label: "Text", color: "bg-blue-400" },
     { icon: Camera, label: "Camera", color: "bg-cyan-400" },
   ];
 
