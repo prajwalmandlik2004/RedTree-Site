@@ -8,6 +8,13 @@ const AnimatedButtonCircle = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(-1);
 
+  const [isPaletteOpen, setIsPaletteOpen] = useState(true);
+
+  const togglePalette = () => {
+    setIsPaletteOpen((prev) => !prev);
+  };
+
+
   const buttons = [
     { icon: CloudUpload, label: "Backup and Sync", color: "bg-yellow-400" },
     { icon: Folder, label: "RT Manager", color: "bg-green-500" },
@@ -48,7 +55,7 @@ const AnimatedButtonCircle = () => {
     <div className="relative flex items-center justify-center w-32 h-32">
       {/* Center RedTree Logo Button */}
       <div className="relative z-10 w-16 h-16 bg-white rounded-full shadow-xl flex items-center justify-center transition-transform duration-300 hover:scale-110">
-        <div className="relative w-35 h-35">
+        <div onClick={togglePalette} className="relative w-35 h-35">
           <Image
             src="/images/hero/redtreelogo.png"
             alt="RedTree Logo"
@@ -90,6 +97,7 @@ const AnimatedButtonCircle = () => {
               transition: `all 0.6s ease-out ${index * 0.1}s`,
             }}
           >
+            {isPaletteOpen && (
             <div className="relative">
               <button
                 className={`w-12 h-12 ${button.color} rounded-full shadow-lg flex items-center justify-center text-white text-xl transition-all duration-300 hover:scale-125 animate-float`}
@@ -113,6 +121,7 @@ const AnimatedButtonCircle = () => {
               )}
 
             </div>
+            )}
           </div>
         );
       })}
@@ -152,7 +161,7 @@ const Hero = () => {
                 </div>
               </div> */}
 
-              <div className="relative aspect-[8/8] md:aspect-[22/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
+              <div className="relative aspect-[6/8] md:aspect-[22/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
                 <Image
                   src="/images/hero/hero_bg.jpeg"
                   alt="RedTree Hero Background"
