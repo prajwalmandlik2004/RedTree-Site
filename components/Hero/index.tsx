@@ -1,6 +1,124 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { CloudUpload, Camera, Settings, File, Folder, Save, Search, Edit, Icon, Mic2Icon, MicIcon, Pin } from "lucide-react";
+
+
+const AnimatedButtonCircle = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(-1);
+
+  const buttons = [
+    { icon: CloudUpload, label: "Backup and Sync", color: "bg-yellow-400" },
+    { icon: Folder, label: "RT Manager", color: "bg-green-500" },
+    { icon: MicIcon, label: "Voice Memo", color: "bg-violet-400" },
+    { icon: Search, label: "Search", color: "bg-gray-600" },
+    { icon: Settings, label: "Settings", color: "bg-red-500" },
+    { icon: Pin, label: "Annotation", color: "bg-orange-500" },
+    { icon: Edit, label: "Text Memo", color: "bg-blue-400" },
+    { icon: Camera, label: "Camera", color: "bg-cyan-400" },
+  ];
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsOpen(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      buttons.forEach((_, index) => {
+        setTimeout(() => {
+          setShowTooltip(index);
+          setTimeout(() => setShowTooltip(-1), 1500);
+        }, index * 1800);
+      });
+    }
+  }, [isOpen]);
+
+
+  const getButtonPosition = (index, total) => {
+    const angle = (index * 360) / total;
+    const radius = 80;
+    const x = Math.cos((angle - 90) * (Math.PI / 180)) * radius;
+    const y = Math.sin((angle - 90) * (Math.PI / 180)) * radius;
+    return { x, y };
+  };
+
+  return (
+    <div className="relative flex items-center justify-center w-32 h-32">
+      {/* Center RedTree Logo Button */}
+      <div className="relative z-10 w-16 h-16 bg-white rounded-full shadow-xl flex items-center justify-center transition-transform duration-300 hover:scale-110">
+        <div className="relative w-35 h-35">
+          <Image
+            src="/images/hero/redtreelogo.png"
+            alt="RedTree Logo"
+            fill
+            className="object-contain"
+          />
+        </div>
+      </div>
+
+      {/* Surrounding Buttons */}
+      {buttons.map((button, index) => {
+        const { x, y } = getButtonPosition(index, buttons.length);
+        const isVisible = isOpen;
+        const Icon = button.icon;
+
+        const isTop = y < 0;
+        const isRight = x > 0;
+
+        const tooltipPosition = `
+  ${isTop ? "-top-10" : "top-12"} 
+  ${isRight ? "left-full ml-1" : "right-full mr-1"}
+`;
+
+        const tooltipArrow = isTop
+          ? (isRight ? "border-t-gray-900 bottom-[-4px] left-1" : "border-t-gray-900 bottom-[-4px] right-1")
+          : (isRight ? "border-b-gray-900 top-[-4px] left-1" : "border-b-gray-900 top-[-4px] right-1");
+
+
+
+        return (
+          <div
+            key={index}
+            className="absolute"
+            style={{
+              transform: isVisible
+                ? `translate(${x}px, ${y}px)`
+                : "translate(0, 0)",
+              opacity: isVisible ? 1 : 0,
+              transition: `all 0.6s ease-out ${index * 0.1}s`,
+            }}
+          >
+            <div className="relative">
+              <button
+                className={`w-12 h-12 ${button.color} rounded-full shadow-lg flex items-center justify-center text-white text-xl transition-all duration-300 hover:scale-125 animate-float`}
+                style={{
+                  animationDelay: `${index * 0.2}s`,
+                }}
+              >
+                <Icon className="w-6 h-6 text-white" />
+              </button>
+
+              {showTooltip === index && (
+                <div
+                  className={`absolute ${tooltipPosition} bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap z-[9999]`}
+                >
+                  {button.label}
+
+                  <div
+                    className={`absolute w-0 h-0 border-l-4 border-r-4 border-transparent ${tooltipArrow}`}
+                  ></div>
+                </div>
+              )}
+
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 const Hero = () => {
   const [email, setEmail] = useState("");
@@ -34,7 +152,7 @@ const Hero = () => {
                 </div>
               </div> */}
 
-              <div className="relative aspect-[10/8] md:aspect-[22/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
+              <div className="relative aspect-[8/8] md:aspect-[22/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
                 <Image
                   src="/images/hero/hero_bg.jpeg"
                   alt="RedTree Hero Background"
@@ -59,9 +177,17 @@ const Hero = () => {
                       </p>
                     </div>
                   </div>
+                  {/* ADD THIS NEW SECTION */}
+                  <div className="flex justify-center md:justify-center mt-12 mb-10">
+                    <AnimatedButtonCircle />
+                  </div>
                 </div>
+
               </div>
+
             </div>
+
+
 
             <div className="mt-6 md:mt-8 max-w-5xl">
               <h3 className="text-center md:text-left md:text-2xl lg:text-3xl font-bold text-gray-700 dark:text-gray-300 mb-4 md:ms-[-100px]">
