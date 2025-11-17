@@ -43,6 +43,28 @@ const featuresData: Feature[] = [
     description:
       "Search files using names or text from attached notes across RT File Manager and Image Files screens.",
   },
+  {
+    id: 7,
+    icon: "/images/icon/icon-04.svg",
+    title: "Voice & Text Memo",
+    description:
+      "Create quick voice memos or write text notes anytime. Organize and access your thoughts with a clean, built-in memo system.",
+  },
+  {
+    id: 8,
+    icon: "/images/icon/icon-03.svg",
+    title: "Secure Login & Signup",
+    description:
+      "Fast and secure authentication with email login, social sign-in options, and encrypted user profile management.",
+  },
+  {
+    id: 9,
+    icon: "/images/icon/icon-02.svg",
+    title: "Cloud Backup & Restore",
+    description:
+      "Automatically back up your media, notes, and folders to the cloud. Restore data instantly across any device.",
+  },
+
 ];
 
 export default featuresData;

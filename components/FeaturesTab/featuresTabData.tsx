@@ -5,9 +5,9 @@ const featuresTabData: FeatureTab[] = [
     id: "tabOne",
     title: "Quick Launch Screen",
     desc1: `Start your RedTree journey with a clean launch screen featuring app name, logo, and simple navigation.`,
-    desc2: `Choose between Camera for instant capture or RT Manager for organizing files—making it effortless to get started.`,
-    image: "/images/mockups/launch.png",
-    imageDark: "/images/mockups/launch.png",
+    desc2: `Choose between Camera for instant capture or RT Manager for organizing files—making it effortless to get started. Voice and Text memo, Profile, Backup feature.`,
+    image: "/images/mockups/landing-portrait.png",
+    imageDark: "/images/mockups/landing-portrait.png",
     width: 1080,
     height: 1920
   },
@@ -43,14 +43,15 @@ const featuresTabData: FeatureTab[] = [
   },
   {
     id: "tabFive",
-    title: "Image Viewer with Smart Tools",
-    desc1: `Preview, zoom, crop, or annotate your images with ease. View image details and navigate between files smoothly.`,
-    desc2: `Enable multi-select mode for batch operations like delete, move, or share, enhancing productivity.`,
-    image: "/images/mockups/image_list.png",
-    imageDark: "/images/mockups/image_list.png",
+    title: "Voice & Text Memo",
+    desc1: `Capture quick voice memos or write detailed text notes instantly. Stay organized with a fast and intuitive memo experience.`,
+    desc2: `Record audio, transcribe thoughts, or create written notes anytime. Easily manage, review, and access all your memos in one place.`,
+    image: "/images/mockups/memooption-portrait.png",
+    imageDark: "/images/mockups/memooption-portrait.png",
     width: 1080,
     height: 1920
-  },
+  }
+
 
 ];
 

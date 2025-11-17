@@ -26,7 +26,7 @@ const About = () => {
               whileInView="visible"
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="animate_left relative mx-auto hidden aspect-[208/406.5] md:block md:w-1/3"
+              className="animate_left relative mx-auto hidden aspect-[208/306.5] md:block md:w-1/3"
             >
               <Image
                 src="/images/hero/app1.svg"
@@ -65,13 +65,13 @@ const About = () => {
                 </span>{" "}
                 Empowering Your Vision
               </span> */}
-              <div  style={{ fontFamily: 'Times New Roman, serif' }} className="font-bold text-3xl md:text-3xl lg:text-3xl font-serif">
+              <div style={{ fontFamily: 'Times New Roman, serif' }} className="font-bold text-3xl md:text-3xl lg:text-3xl font-serif">
                 <div className="text-black dark:text-white">
                   <span className="text-red-500">EM</span>
                   <span className="text-black dark:text-white">POWER</span>
                   <span className="text-red-500">ING</span>
                 </div>
-                <div className="text-black text-4xl dark:text-white mt-0 ml-8 ms-55">
+                <div className="text-black text-3xl dark:text-white mt-0 ml-8 ms-55">
                   <span className="text-red-500">YOUR</span>
                   <span className="text-black dark:text-white"> VISION</span>
                 </div>
@@ -123,6 +123,20 @@ const About = () => {
                   <p>Attach text notes to images, improving context and recall – perfect for journaling, work logs, or creative projects.</p>
                 </div>
               </div>
+              <div className="mt-7.5 flex items-center gap-5">
+                <div className="flex h-15 w-15 bg-red-500 items-center justify-center rounded-[50%] border border-stroke dark:border-strokedark dark:bg-red-500">
+                  <p className="text-metatitle2 font-semibold text-white dark:text-white">
+                    04
+                  </p>
+                </div>
+                <div className="w-3/4">
+                  <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
+                    Voice & Text Memo
+                  </h3>
+                  <p>Record voice memos or create quick text notes to capture thoughts instantly — perfect for reminders, ideas, and personal journaling.</p>
+                </div>
+              </div>
+
             </motion.div>
           </div>
         </div>
