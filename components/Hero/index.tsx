@@ -27,7 +27,7 @@ const AnimatedButtonCircle = () => {
   ];
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(true), 1000);
+    const timer = setTimeout(() => setIsOpen(true), 7500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -98,29 +98,29 @@ const AnimatedButtonCircle = () => {
             }}
           >
             {isPaletteOpen && (
-            <div className="relative">
-              <button
-                className={`w-12 h-12 ${button.color} rounded-full shadow-lg flex items-center justify-center text-white text-xl transition-all duration-300 hover:scale-125 animate-float`}
-                style={{
-                  animationDelay: `${index * 0.2}s`,
-                }}
-              >
-                <Icon className="w-6 h-6 text-white" />
-              </button>
-
-              {showTooltip === index && (
-                <div
-                  className={`absolute ${tooltipPosition} bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap z-[9999]`}
+              <div className="relative">
+                <button
+                  className={`w-12 h-12 ${button.color} rounded-full shadow-lg flex items-center justify-center text-white text-xl transition-all duration-300 hover:scale-125 animate-float`}
+                  style={{
+                    animationDelay: `${index * 0.2}s`,
+                  }}
                 >
-                  {button.label}
+                  <Icon className="w-6 h-6 text-white" />
+                </button>
 
+                {showTooltip === index && (
                   <div
-                    className={`absolute w-0 h-0 border-l-4 border-r-4 border-transparent ${tooltipArrow}`}
-                  ></div>
-                </div>
-              )}
+                    className={`absolute ${tooltipPosition} bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap z-[9999]`}
+                  >
+                    {button.label}
 
-            </div>
+                    <div
+                      className={`absolute w-0 h-0 border-l-4 border-r-4 border-transparent ${tooltipArrow}`}
+                    ></div>
+                  </div>
+                )}
+
+              </div>
             )}
           </div>
         );
@@ -162,44 +162,47 @@ const Hero = () => {
               </div> */}
 
               <div className="relative aspect-[6/8] md:aspect-[22/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
-                <Image
-                  src="/images/hero/hero_bg.jpeg"
-                  alt="RedTree Hero Background"
-                  fill
-                  className="object-cover contrast-105 saturate-150 animate-slowzoom"
-                  priority
-                />
+                <div className="absolute inset-0 hero-bg-start">
+                  <Image
+                    src="/images/hero/hero_bg.jpeg"
+                    alt="RedTree Hero Background"
+                    fill
+                    className="object-cover contrast-105 saturate-150 animate-slowzoom"
+                    priority
+                  />
+                </div>
+
 
                 <div className="absolute inset-0 bg-black/30"></div>
 
                 <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-8 pt-8 md:pt-12">
                   <div className="max-w-4xl -mt-10">
-                   <div className="mb-4 md:mb-6">
-  <p
-    className="fade-line animate-line1 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed mb-2 text-left ml-5 md:ml-16"
-    style={{ fontFamily: "Times New Roman, serif" }}
-  >
-    In the legends of the North,
-  </p>
+                    <div className="mb-4 md:mb-6">
+                      <p
+                        className="fade-line animate-line1 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed mb-2 text-left ml-5 md:ml-16"
+                        style={{ fontFamily: "Times New Roman, serif" }}
+                      >
+                        In the legends of the North,
+                      </p>
 
-  <p
-    className="fade-line animate-line2 mt-3 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed mb-3 text-left ml-8 md:ml-40"
-    style={{ fontFamily: "Times New Roman, serif" }}
-  >
-    there is a tree that sees, judges, and weeps...
-  </p>
+                      <p
+                        className="fade-line animate-line2 mt-3 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed mb-3 text-left ml-8 md:ml-40"
+                        style={{ fontFamily: "Times New Roman, serif" }}
+                      >
+                        There is a tree that sees, judges, and weeps...
+                      </p>
 
-  <p
-    className="fade-line animate-line3 mt-6 md:mt-10 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed text-left ml-12 md:ml-46 whitespace-normal lg:whitespace-nowrap"
-    style={{ fontFamily: "Times New Roman, serif" }}
-  >
-    RedTree has no carved face, but it, too, remembers.
-  </p>
-</div>
+                      <p
+                        className="fade-line animate-line3 mt-6 md:mt-10 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed text-left ml-12 md:ml-46 whitespace-normal lg:whitespace-nowrap"
+                        style={{ fontFamily: "Times New Roman, serif" }}
+                      >
+                        RedTree has no carved face, but it, too, remembers.
+                      </p>
+                    </div>
 
                   </div>
                   {/* ADD THIS NEW SECTION */}
-                  <div className="flex justify-center md:justify-center mt-12 mb-10">
+                  <div className="flex justify-center md:justify-center mt-12 mb-10 logo-fade">
                     <AnimatedButtonCircle />
                   </div>
                 </div>

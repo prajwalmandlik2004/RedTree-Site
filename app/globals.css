@@ -176,6 +176,7 @@ pre {
   animation: slowzoom 8s ease-in-out infinite alternate;
 }
 
+
 /* Base animation */
 .fade-line {
   opacity: 0;
@@ -185,15 +186,15 @@ pre {
 
 /* Delays for each line */
 .animate-line1 {
-  animation-delay: 0.4s;
+  animation-delay: 1.5s;
 }
 
 .animate-line2 {
-  animation-delay: 1.4s;
+  animation-delay: 3.5s;
 }
 
 .animate-line3 {
-  animation-delay: 2.4s;
+  animation-delay: 5.5s;
 }
 
 @keyframes revealLine {
@@ -207,3 +208,26 @@ pre {
     transform: translateY(0);
   }
 }
+
+/* LOGO Reveal Animation */
+.logo-fade {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: logoReveal 0.8s ease-out forwards;
+  animation-delay: 7s;
+  /* Your required delay */
+}
+
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
