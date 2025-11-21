@@ -27,7 +27,7 @@ const AnimatedButtonCircle = () => {
   ];
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(true), 7500);
+    const timer = setTimeout(() => setIsOpen(true), 13000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -36,7 +36,7 @@ const AnimatedButtonCircle = () => {
       buttons.forEach((_, index) => {
         setTimeout(() => {
           setShowTooltip(index);
-          setTimeout(() => setShowTooltip(-1), 1500);
+          setTimeout(() => setShowTooltip(-1), 14000);
         }, index * 1800);
       });
     }
@@ -179,21 +179,21 @@ const Hero = () => {
                   <div className="max-w-4xl -mt-10">
                     <div className="mb-4 md:mb-6">
                       <p
-                        className="fade-line animate-line1 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed mb-2 text-left ml-5 md:ml-16"
+                        className="fade-line animate-line1 text-white text-base md:text-xl lg:text-4xl font-medium  leading-relaxed mb-2 text-left ml-5 md:ml-16"
                         style={{ fontFamily: "Times New Roman, serif" }}
                       >
                         In the legends of the North,
                       </p>
 
                       <p
-                        className="fade-line animate-line2 mt-3 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed mb-3 text-left ml-8 md:ml-40"
+                        className="fade-line animate-line2 mt-3 text-white text-base md:text-xl lg:text-4xl font-medium  leading-relaxed mb-3 text-left ml-8 md:ml-40"
                         style={{ fontFamily: "Times New Roman, serif" }}
                       >
                         There is a tree that sees, judges, and weeps...
                       </p>
 
                       <p
-                        className="fade-line animate-line3 mt-6 md:mt-10 text-white text-base md:text-xl lg:text-4xl font-medium italic leading-relaxed text-left ml-12 md:ml-46 whitespace-normal lg:whitespace-nowrap"
+                        className="fade-line animate-line3 mt-6 md:mt-10 text-white text-base md:text-xl lg:text-4xl font-medium  leading-relaxed text-left ml-12 md:ml-46 whitespace-normal lg:whitespace-nowrap"
                         style={{ fontFamily: "Times New Roman, serif" }}
                       >
                         RedTree has no carved face, but it, too, remembers.
