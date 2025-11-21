@@ -27,7 +27,7 @@ const AnimatedButtonCircle = () => {
   ];
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(true), 13000);
+    const timer = setTimeout(() => setIsOpen(true), 14000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -36,7 +36,7 @@ const AnimatedButtonCircle = () => {
       buttons.forEach((_, index) => {
         setTimeout(() => {
           setShowTooltip(index);
-          setTimeout(() => setShowTooltip(-1), 14000);
+          setTimeout(() => setShowTooltip(-1), 15000);
         }, index * 1800);
       });
     }
