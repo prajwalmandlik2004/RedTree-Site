@@ -1,29 +1,29 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { CloudUpload, Camera, Settings, File, Folder, Save, Search, Edit, Icon, Mic2Icon, MicIcon, Pin } from "lucide-react";
 
 
 const AnimatedButtonCircle = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(-1);
-
   const [isPaletteOpen, setIsPaletteOpen] = useState(true);
 
   const togglePalette = () => {
     setIsPaletteOpen((prev) => !prev);
   };
 
-
   const buttons = [
-    { icon: CloudUpload, label: "Sync", color: "bg-yellow-400" },
-    { icon: Folder, label: "RT Manager", color: "bg-green-500" },
-    { icon: MicIcon, label: "Voice", color: "bg-violet-400" },
-    { icon: Search, label: "Search", color: "bg-gray-600" },
-    { icon: Settings, label: "Settings", color: "bg-red-500" },
-    { icon: Pin, label: "Annotation", color: "bg-orange-500" },
-    { icon: Edit, label: "Text", color: "bg-blue-400" },
-    { icon: Camera, label: "Camera", color: "bg-cyan-400" },
+    { icon: CloudUpload, label: "Sync", color: "bg-yellow-400", route: "/backup" },
+    { icon: Folder, label: "RT Manager", color: "bg-green-500", route: "/rt-manager" },
+    { icon: MicIcon, label: "Voice", color: "bg-violet-400", route: "/voice-memo" },
+    { icon: Search, label: "Search", color: "bg-gray-600", route: "/search" },
+    { icon: Settings, label: "Settings", color: "bg-red-500", route: "/settings" },
+    { icon: Pin, label: "Annotation", color: "bg-orange-500", route: "/annotation" },
+    { icon: Edit, label: "Text", color: "bg-blue-400", route: "/text-memo" },
+    { icon: Camera, label: "Camera", color: "bg-cyan-400", route: "/camera" },
   ];
 
   useEffect(() => {
@@ -42,7 +42,6 @@ const AnimatedButtonCircle = () => {
     }
   }, [isOpen]);
 
-
   const getButtonPosition = (index, total) => {
     const angle = (index * 360) / total;
     const radius = 80;
@@ -51,11 +50,15 @@ const AnimatedButtonCircle = () => {
     return { x, y };
   };
 
+  const handleButtonClick = (route) => {
+    router.push(route);
+  };
+
   return (
     <div className="relative flex items-center justify-center w-32 h-32">
       {/* Center RedTree Logo Button */}
       <div className="relative z-10 w-16 h-16 bg-white rounded-full shadow-xl flex items-center justify-center transition-transform duration-300 hover:scale-110">
-        <div onClick={togglePalette} className="relative w-35 h-35">
+        <div onClick={togglePalette} className="relative w-35 h-35 cursor-pointer">
           <Image
             src="/images/hero/redtreelogo.png"
             alt="RedTree Logo"
@@ -83,8 +86,6 @@ const AnimatedButtonCircle = () => {
           ? (isRight ? "border-t-gray-900 bottom-[-4px] left-1" : "border-t-gray-900 bottom-[-4px] right-1")
           : (isRight ? "border-b-gray-900 top-[-4px] left-1" : "border-b-gray-900 top-[-4px] right-1");
 
-
-
         return (
           <div
             key={index}
@@ -100,7 +101,8 @@ const AnimatedButtonCircle = () => {
             {isPaletteOpen && (
               <div className="relative">
                 <button
-                  className={`w-12 h-12 ${button.color} rounded-full shadow-lg flex items-center justify-center text-white text-xl transition-all duration-300 hover:scale-125 animate-float`}
+                  onClick={() => handleButtonClick(button.route)}
+                  className={`w-12 h-12 ${button.color} rounded-full shadow-lg flex items-center justify-center text-white text-xl transition-all duration-300 hover:scale-125 animate-float cursor-pointer`}
                   style={{
                     animationDelay: `${index * 0.2}s`,
                   }}
@@ -140,27 +142,8 @@ const Hero = () => {
     <>
       <section className="overflow-hidden pb-20 pt-20 md:pt-25 xl:pb-25 xl:pt-30">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          {/* <div className="text-center mt-6 mb-6">
-            <h4 className="text-base md:text-lg font-medium text-black dark:text-white">
-              Capture Moments & Organize Seamlessly with RedTree
-            </h4>
-          </div> */}
-
           <div className="mt-10 ms-3 relative flex flex-col items-center">
             <div className="relative w-full">
-              {/* <div className="relative z-20 flex justify-center mb-[-30px] md:mb-[-40px]">
-                <div className="w-20 h-20 md:w-30 md:h-30 bg-white rounded-full p-2 shadow-lg">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/images/hero/redtreelogo.png"
-                      alt="RedTree Logo"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-              </div> */}
-
               <div className="relative aspect-[6/8] md:aspect-[22/8] w-full max-w-7xl mx-auto rounded-lg overflow-hidden -mt-2 md:-mt-3">
                 <div className="absolute inset-0 hero-bg-start">
                   <Image
@@ -171,7 +154,6 @@ const Hero = () => {
                     priority
                   />
                 </div>
-
 
                 <div className="absolute inset-0 bg-black/30"></div>
 
@@ -201,7 +183,7 @@ const Hero = () => {
                     </div>
 
                   </div>
-                  {/* ADD THIS NEW SECTION */}
+                  {/* Animated Button Circle */}
                   <div className="flex justify-center md:justify-center mt-12 mb-10 logo-fade">
                     <AnimatedButtonCircle />
                   </div>
@@ -210,8 +192,6 @@ const Hero = () => {
               </div>
 
             </div>
-
-
 
             <div className="mt-6 md:mt-8 max-w-5xl">
               <h3 className="text-center md:text-left md:text-2xl lg:text-3xl font-bold text-gray-700 dark:text-gray-300 mb-4 md:ms-[-100px]">

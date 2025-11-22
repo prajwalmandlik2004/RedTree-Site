@@ -31,55 +31,61 @@ const menuData: Menu[] = [
   //   newTab: false,
   //   path: "/docs",
   // },
-  // {
-  //   id: 3,
-  //   title: "Pages",
-  //   newTab: false,
-  //   submenu: [
-      // {
-      //   id: 31,
-      //   title: "Templates",
-      //   newTab: false,
-      //   path: "/blog",
-      // },
-      // {
-      //   id: 34,
-      //   title: "Sign In",
-      //   newTab: false,
-      //   path: "/auth/signin",
-      // },
-      // {
-      //   id: 35,
-      //   title: "Sign Up",
-      //   newTab: false,
-      //   path: "/auth/signup",
-      // },
-      // {
-      //   id: 34,
-      //   title: "Pricing",
-      //   newTab: false,
-      //   path: "/#pricing",
-      // },
-      // {
-      //   id: 35,
-      //   title: "Docs",
-      //   newTab: false,
-      //   path: "/docs",
-      // },
-      // {
-      //   id: 35.1,
-      //   title: "Support",
-      //   newTab: false,
-      //   path: "/support",
-      // },
-      // {
-      //   id: 36,
-      //   title: "404",
-      //   newTab: false,
-      //   path: "/error",
-      // },
-  //   ],
-  // },
+  {
+    id: 3,
+    title: "Pages",
+    newTab: false,
+    submenu: [
+      {
+        id: 31,
+        title: "Camera",
+        newTab: false,
+        path: "/camera",
+      },
+      {
+        id: 34,
+        title: "Backup",
+        newTab: false,
+        path: "/backup",
+      },
+      {
+        id: 35,
+        title: "RT Manager",
+        newTab: false,
+        path: "/rt-manager",
+      },
+      {
+        id: 34,
+        title: "Voice Memo",
+        newTab: false,
+        path: "/voice-memo",
+      },
+      {
+        id: 35,
+        title: "Text Memo",
+        newTab: false,
+        path: "/text-memo",
+      },
+      {
+        id: 35.1,
+        title: "Annotation",
+        newTab: false,
+        path: "/annotation",
+      },
+      {
+        id: 36,
+        title: "Search",
+        newTab: false,
+        path: "/search",
+      },
+      {
+        id: 36.1,
+        title: "Settings",
+        newTab: false,
+        path: "/settings",
+      },
+    ],
+  },
 
   {
     id: 7,
