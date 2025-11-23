@@ -12,6 +12,8 @@ const FloatingPalette = () => {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [clickCount, setClickCount] = useState(0);
   const clickTimer = useRef<NodeJS.Timeout | null>(null);
+  const touchStartTime = useRef<number>(0);
+  const touchStartPos = useRef({ x: 0, y: 0 });
   const dragThreshold = 5;
   const hasMoved = useRef(false);
 
@@ -47,25 +49,25 @@ const FloatingPalette = () => {
     if (isDragging) {
       const newX = e.clientX - dragStart.x;
       const newY = e.clientY - dragStart.y;
-      
+
       if (Math.abs(newX - position.x) > dragThreshold || Math.abs(newY - position.y) > dragThreshold) {
         hasMoved.current = true;
       }
-      
+
       setPosition({ x: newX, y: newY });
     }
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    
+
     if (!hasMoved.current) {
       setClickCount(prev => prev + 1);
-      
+
       if (clickTimer.current) {
         clearTimeout(clickTimer.current);
       }
-      
+
       clickTimer.current = setTimeout(() => {
         if (clickCount + 1 === 1) {
           setIsOpen(prev => !prev);
@@ -78,9 +80,13 @@ const FloatingPalette = () => {
   };
 
   const handleTouchStart = (e) => {
+    e.preventDefault();
     const touch = e.touches[0];
-    setIsDragging(true);
+    touchStartTime.current = Date.now();
+    touchStartPos.current = { x: touch.clientX, y: touch.clientY };
     hasMoved.current = false;
+
+    setIsDragging(true);
     setDragStart({
       x: touch.clientX - position.x,
       y: touch.clientY - position.y,
@@ -92,33 +98,43 @@ const FloatingPalette = () => {
       const touch = e.touches[0];
       const newX = touch.clientX - dragStart.x;
       const newY = touch.clientY - dragStart.y;
-      
-      if (Math.abs(newX - position.x) > dragThreshold || Math.abs(newY - position.y) > dragThreshold) {
+
+      const deltaX = Math.abs(touch.clientX - touchStartPos.current.x);
+      const deltaY = Math.abs(touch.clientY - touchStartPos.current.y);
+
+      if (deltaX > dragThreshold || deltaY > dragThreshold) {
         hasMoved.current = true;
+        e.preventDefault();
       }
-      
+
       setPosition({ x: newX, y: newY });
     }
   };
 
-  const handleTouchEnd = () => {
-    handleMouseUp();
-  };
+  const handleTouchEnd = (e) => {
+    e.preventDefault();
+    const touchDuration = Date.now() - touchStartTime.current;
+    setIsDragging(false);
 
-  useEffect(() => {
-    if (isDragging) {
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
-    } else {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
+    if (!hasMoved.current && touchDuration < 200) {
+      setClickCount(prev => prev + 1);
+
+      if (clickTimer.current) {
+        clearTimeout(clickTimer.current);
+      }
+
+      clickTimer.current = setTimeout(() => {
+        if (clickCount + 1 === 1) {
+          setIsOpen(prev => !prev);
+        } else if (clickCount + 1 === 2) {
+          router.push('/');
+        }
+        setClickCount(0);
+      }, 300);
     }
 
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, [isDragging, dragStart, position]);
+    hasMoved.current = false;
+  };
 
   const handleButtonClick = (route) => {
     setIsOpen(false);
@@ -127,11 +143,12 @@ const FloatingPalette = () => {
 
   return (
     <div
-      className="fixed z-50"
+      className="fixed z-[9999] floating-palette-container"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
         cursor: isDragging ? "grabbing" : "grab",
+        touchAction: 'none',
       }}
     >
       <div className="relative flex items-center justify-center w-28 h-28">
@@ -142,6 +159,7 @@ const FloatingPalette = () => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          style={{ touchAction: 'none' }}
         >
           <div className="relative w-12 h-12">
             <Image
