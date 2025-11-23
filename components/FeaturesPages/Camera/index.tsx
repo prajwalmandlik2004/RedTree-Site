@@ -53,7 +53,7 @@ const CameraPage = () => {
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
           <FloatingPalette />
           {/* Header Section */}
-          <div className="text-center mb-16 mt-12">
+          <div className="text-center mb-12 mt-12">
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: -20 },
