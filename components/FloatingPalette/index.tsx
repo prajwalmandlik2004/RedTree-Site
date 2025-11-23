@@ -143,7 +143,7 @@ const FloatingPalette = () => {
 
   return (
     <div
-      className="fixed z-[9999] floating-palette-container"
+      className="fixed z-[9999] floating-palette-container block lg:hidden"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
