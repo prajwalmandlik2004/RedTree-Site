@@ -1,4 +1,5 @@
 "use client";
+import FloatingPalette from "@/components/FloatingPalette";
 import { motion } from "framer-motion";
 import { Search, Zap, Filter, FileText, Image, Mic, Calendar, Tag } from "lucide-react";
 
@@ -51,7 +52,8 @@ const SearchPage = () => {
       <section className="pb-20 pt-15 lg:pb-25 lg:pt-20 xl:pb-30 xl:pt-25">
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
           {/* Header Section */}
-          <div className="text-center mb-16">
+           <FloatingPalette />
+          <div className="text-center mb-16 mt-12">
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: -20 },

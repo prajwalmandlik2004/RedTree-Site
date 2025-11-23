@@ -49,10 +49,11 @@ const CameraPage = () => {
 
   return (
     <>
-        <section className="pb-20 pt-15 lg:pb-25 lg:pt-20 xl:pb-30 xl:pt-25">
+      <section className="pb-20 pt-15 lg:pb-25 lg:pt-20 xl:pb-30 xl:pt-25">
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
+          <FloatingPalette />
           {/* Header Section */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 mt-12">
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: -20 },
@@ -80,7 +81,7 @@ const CameraPage = () => {
             >
               RedTree Camera
             </motion.h1>
-            <FloatingPalette />
+
 
             <motion.p
               variants={{
@@ -145,7 +146,7 @@ const CameraPage = () => {
               <h2 className="text-2xl font-bold text-white mb-8 md:text-3xl text-center">
                 Intelligent Capture Workflow
               </h2>
-              
+
               {/* Workflow Steps */}
               <div className="max-w-5xl mx-auto mb-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -156,7 +157,7 @@ const CameraPage = () => {
                     <h3 className="text-white font-semibold mb-2">1. Capture</h3>
                     <p className="text-white/80 text-sm">Take photo or video</p>
                   </div>
-                  
+
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Sparkles className="w-8 h-8 text-white" />
@@ -164,7 +165,7 @@ const CameraPage = () => {
                     <h3 className="text-white font-semibold mb-2">2. RT Box Opens</h3>
                     <p className="text-white/80 text-sm">Automatic dialog appears</p>
                   </div>
-                  
+
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Mic className="w-8 h-8 text-white" />
@@ -172,7 +173,7 @@ const CameraPage = () => {
                     <h3 className="text-white font-semibold mb-2">3. Name It</h3>
                     <p className="text-white/80 text-sm">Voice or text input</p>
                   </div>
-                  
+
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <FolderTree className="w-8 h-8 text-white" />

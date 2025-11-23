@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CloudUpload, Shield, RefreshCw, Smartphone, Lock, Zap, Database, CheckCircle } from "lucide-react";
+import FloatingPalette from "@/components/FloatingPalette";
 
 const Backup = () => {
   const features = [
@@ -50,9 +51,11 @@ const Backup = () => {
   return (
     <>
       <section className="pb-20 pt-15 lg:pb-25 lg:pt-20 xl:pb-30 xl:pt-25">
+        
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
+          <FloatingPalette />
           {/* Header Section */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 mt-12">
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: -20 },
