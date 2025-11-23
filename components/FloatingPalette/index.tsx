@@ -8,7 +8,7 @@ const FloatingPalette = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 150, y: 110 });
+  const [position, setPosition] = useState({ x: 145, y: 120 });
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [clickCount, setClickCount] = useState(0);
   const clickTimer = useRef<NodeJS.Timeout | null>(null);
