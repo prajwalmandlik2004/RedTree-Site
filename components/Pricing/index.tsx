@@ -40,7 +40,7 @@ const Pricing = () => {
                 </div>
               </div>
 
-              <h1 className="mb-8 text-black leading-relaxed ms-8 text-xl">
+              <h1 className="mb-8 text-black leading-relaxed ms-8 text-small">
                 €0/30 days
               </h1>
 
@@ -99,7 +99,7 @@ const Pricing = () => {
                 </div>
               </div>
 
-              <h1 className="mb-8 text-black leading-relaxed ms-8 text-xl">
+              <h1 className="mb-8 text-black leading-relaxed ms-8 text-small">
                 €9/month or €69/year
               </h1>
 
@@ -162,7 +162,7 @@ const Pricing = () => {
                 </div>
               </div>
 
-              <h1 className="mb-8 text-black leading-relaxed ms-8 text-xl">
+              <h1 className="mb-8 text-black leading-relaxed ms-8 text-small">
                 €19/month or €199/year
               </h1>
 

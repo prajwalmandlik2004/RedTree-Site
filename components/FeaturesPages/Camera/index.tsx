@@ -1,4 +1,5 @@
 "use client";
+import FloatingPalette from "@/components/FloatingPalette";
 import { motion } from "framer-motion";
 import { Camera, Video, Zap, FolderTree, Mic, Image as ImageIcon, Settings, Sparkles } from "lucide-react";
 
@@ -79,6 +80,7 @@ const CameraPage = () => {
             >
               RedTree Camera
             </motion.h1>
+            <FloatingPalette />
 
             <motion.p
               variants={{
