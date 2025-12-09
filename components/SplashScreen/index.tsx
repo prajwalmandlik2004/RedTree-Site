@@ -1,12 +1,25 @@
 "use client";
 import { useState, useEffect } from "react";
-import { ChevronDown, CloudUpload, Camera, Settings, Folder, Search, Edit, Mic, Pin } from "lucide-react";
+import { ChevronDown, CloudUpload, Camera, Settings, Folder, Search, Edit, Mic, Pin, MicIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const SplashScreen = ({ onComplete }) => {
   const [step, setStep] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [isPaletteOpen, setIsPaletteOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(-1);
+  const router = useRouter();
+
+  const buttons = [
+    { icon: CloudUpload, label: "Sync", color: "bg-yellow-400", route: "/backup" },
+    { icon: Folder, label: "RT Manager", color: "bg-green-500", route: "/rt-manager" },
+    { icon: MicIcon, label: "Voice", color: "bg-violet-400", route: "/voice-memo" },
+    { icon: Search, label: "Search", color: "bg-gray-600", route: "/search" },
+    { icon: Settings, label: "Settings", color: "bg-red-500", route: "/settings" },
+    { icon: Pin, label: "Annotation", color: "bg-orange-500", route: "/annotation" },
+    { icon: Edit, label: "Text", color: "bg-blue-400", route: "/text-memo" },
+    { icon: Camera, label: "Camera", color: "bg-cyan-400", route: "/camera" },
+  ];
 
   useEffect(() => {
     const hasSeenSplash = sessionStorage.getItem("redtree_splash_shown");
@@ -27,12 +40,12 @@ const SplashScreen = ({ onComplete }) => {
 
     const timer5 = setTimeout(() => setStep(5), 11000);
 
-    const timer6 = setTimeout(() => setStep(6), 14000);
+    const timer6 = setTimeout(() => setStep(6), 16000);
 
     const timer7 = setTimeout(() => {
       setIsPaletteOpen(true);
       setStep(7);
-    }, 17000);
+    }, 19000);
 
     const timer8 = setTimeout(() => {
       buttons.forEach((_, index) => {
@@ -42,11 +55,11 @@ const SplashScreen = ({ onComplete }) => {
         }, index * 400);
       });
       setStep(8);
-    }, 18000);
+    }, 20000);
 
     const timer9 = setTimeout(() => {
       setStep(9);
-    }, 21500);
+    }, 23500);
 
     return () => {
       clearTimeout(timer1);
@@ -73,16 +86,7 @@ const SplashScreen = ({ onComplete }) => {
 
   if (!isVisible) return null;
 
-  const buttons = [
-    { icon: CloudUpload, label: "Sync", color: "bg-yellow-400" },
-    { icon: Folder, label: "RT Manager", color: "bg-green-500" },
-    { icon: Mic, label: "Voice", color: "bg-violet-400" },
-    { icon: Search, label: "Search", color: "bg-gray-600" },
-    { icon: Settings, label: "Settings", color: "bg-red-500" },
-    { icon: Pin, label: "Annotation", color: "bg-orange-500" },
-    { icon: Edit, label: "Text", color: "bg-blue-400" },
-    { icon: Camera, label: "Camera", color: "bg-cyan-400" },
-  ];
+
 
   const getButtonPosition = (index, total) => {
     const angle = (index * 360) / total;
@@ -91,6 +95,12 @@ const SplashScreen = ({ onComplete }) => {
     const y = Math.sin((angle - 90) * (Math.PI / 180)) * radius;
     return { x, y };
   };
+
+  const handleButtonClick = (route) => {
+    sessionStorage.setItem("redtree_splash_shown", "true");
+    router.push(route);
+  };
+
 
   return (
     <div className="fixed inset-0 z-[9999] overflow-hidden">
@@ -162,7 +172,7 @@ const SplashScreen = ({ onComplete }) => {
                 return (
                   <div
                     key={index}
-                    className="absolute left-1/2 top-1/2"
+                    className="absolute left-1/2 top-1/2 pointer-events-auto"
                     style={{
                       transform: isVisible
                         ? `translate(calc(-50% + ${x}px), calc(-130% + ${y}px))`
@@ -173,6 +183,7 @@ const SplashScreen = ({ onComplete }) => {
                   >
                     <div className="relative">
                       <button
+                        onClick={() => handleButtonClick(button.route)}
                         className={`w-12 h-12 ${button.color} rounded-full shadow-lg flex items-center justify-center text-white transition-all duration-800 hover:scale-125 animate-float`}
                         style={{
                           animationDelay: `${index * 1}s`,
@@ -217,14 +228,18 @@ const SplashScreen = ({ onComplete }) => {
                 return (
                   <div
                     key={index}
-                    className="absolute left-1/2 top-1/2"
+                    className="absolute left-1/2 top-1/2 pointer-events-auto"
                     style={{
                       transform: `translate(calc(-50% + ${x}px), calc(-130% + ${y}px))`,
                     }}
                   >
-                    <div className={`${button.color} w-12 h-12 rounded-full shadow-lg flex items-center justify-center animate-float`} style={{ animationDelay: `${index * 1}s` }}>
+                    <button
+                      onClick={() => handleButtonClick(button.route)}
+                      className={`${button.color} w-12 h-12 rounded-full shadow-lg flex items-center justify-center animate-float cursor-pointer hover:scale-110 transition-transform`}
+                      style={{ animationDelay: `${index * 1}s` }}
+                    >
                       <ButtonIcon className="w-6 h-6 text-white" />
-                    </div>
+                    </button>
                   </div>
                 );
               })}
