@@ -16,6 +16,7 @@ const Header = () => {
   const [stickyMenu, setStickyMenu] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const pathUrl = usePathname();
+  const [splashActive, setSplashActive] = useState(true);
 
   // Sticky menu
   const handleStickyMenu = () => {
@@ -44,11 +45,24 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const checkSplash = () => {
+      const hasSeenSplash = sessionStorage.getItem("redtree_splash_shown");
+      setSplashActive(!hasSeenSplash);
+    };
+
+    checkSplash();
+
+    const interval = setInterval(checkSplash, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header
-      className={`fixed left-0 top-0 z-99999 w-full py-7 ${stickyMenu
-        ? "bg-white !py-4 shadow transition duration-100 dark:bg-black"
-        : ""
+      className={`fixed left-0 top-0 z-99999 w-full py-7 ${splashActive ? 'opacity-0 pointer-events-none' : 'opacity-100'} ${stickyMenu
+          ? "bg-white !py-4 shadow transition duration-100 dark:bg-black"
+          : ""
         }`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">

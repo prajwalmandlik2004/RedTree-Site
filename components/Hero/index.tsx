@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CloudUpload, Camera, Settings, File, Folder, Save, Search, Edit, Icon, Mic2Icon, MicIcon, Pin } from "lucide-react";
 
+import SplashScreen from "../SplashScreen";
 
 const AnimatedButtonCircle = () => {
   const router = useRouter();
@@ -133,13 +134,21 @@ const AnimatedButtonCircle = () => {
 
 const Hero = () => {
   const [email, setEmail] = useState("");
+  const [showSplash, setShowSplash] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+  };
+
   return (
     <>
+    
+      {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
+
       <section className="overflow-hidden pb-20 pt-20 md:pt-25 xl:pb-25 xl:pt-30">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="mt-10 ms-3 relative flex flex-col items-center">
