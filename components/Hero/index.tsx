@@ -28,7 +28,7 @@ const AnimatedButtonCircle = () => {
   ];
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(true), 16000);
+    const timer = setTimeout(() => setIsOpen(true), 1700);
     return () => clearTimeout(timer);
   }, []);
 
@@ -37,8 +37,8 @@ const AnimatedButtonCircle = () => {
       buttons.forEach((_, index) => {
         setTimeout(() => {
           setShowTooltip(index);
-          setTimeout(() => setShowTooltip(-1), 17000);
-        }, index * 1800);
+          setTimeout(() => setShowTooltip(-1), 1800);
+        }, index * 1900);
       });
     }
   }, [isOpen]);
@@ -168,7 +168,7 @@ const Hero = () => {
 
                 <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-8 pt-8 md:pt-12">
                   <div className="max-w-4xl -mt-10">
-                    <div className="mb-4 md:mb-6">
+                    {/* <div className="mb-4 md:mb-6">
                       <p
                         className="fade-line animate-line1 text-white text-base md:text-xl lg:text-4xl font-medium  leading-relaxed mb-2 text-left ml-5 md:ml-16"
                         style={{ fontFamily: "Times New Roman, serif" }}
@@ -189,7 +189,7 @@ const Hero = () => {
                       >
                         RedTree has no carved face, but it, too, remembers.
                       </p>
-                    </div>
+                    </div> */}
 
                   </div>
                   {/* Animated Button Circle */}

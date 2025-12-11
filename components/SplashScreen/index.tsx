@@ -117,10 +117,10 @@ const SplashScreen = ({ onComplete }) => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6">
 
         {step >= 1 && step < 4 && (
-          <div className="text-center space-y-3">
+          <div className="text-center space-y-4">
             {step >= 1 && (
               <p
-                className="text-white text-3xl md:text-3xl font-medium leading-relaxed animate-fadeIn text-center"
+                className="text-white -mt-50 text-2xl md:text-2xl font-medium leading-relaxed animate-fadeIn text-center"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 In the legends of the North, there is a tree that sees, judges, and weeps...
@@ -131,7 +131,7 @@ const SplashScreen = ({ onComplete }) => {
 
 
         {step >= 5 && step < 6 && (
-          <div className="animate-fadeIn flex flex-col items-center">
+          <div className="animate-fadeIn -mt-50 flex flex-col items-center">
             <div className="relative z-10 w-15 h-15 mx-auto bg-white rounded-full shadow-2xl flex items-center justify-center mb-10">
               <img
                 src="/images/hero/redtreelogo.png"
@@ -139,14 +139,14 @@ const SplashScreen = ({ onComplete }) => {
                 className="w-full h-full object-contain drop-shadow-2xl"
               />
             </div>
-            <p className="text-white text-3xl md:text-3xl text-center leading-relaxed animate-fadeIn px-4 max-w-2xl font-medium" style={{ fontFamily: "Times New Roman, serif" }}>
+            <p className="text-white text-2xl md:text-2xl text-center leading-relaxed animate-fadeIn px-4 max-w-2xl font-medium" style={{ fontFamily: "Times New Roman, serif" }}>
               RedTree notes, structures and gives sense to your memories, your notes, your thoughts
             </p>
           </div>
         )}
 
         {step >= 6 && step < 9 && (
-          <div className="animate-fadeIn flex flex-col items-center">
+          <div className="animate-fadeIn -mt-50 flex flex-col items-center">
             <div className="relative w-40 h-40 mb-8">
               {/* Center Logo Button */}
               <div className="relative z-10 w-15 h-15 mx-auto animate-fadeIn bg-white rounded-full shadow-2xl flex items-center justify-center">
@@ -192,7 +192,7 @@ const SplashScreen = ({ onComplete }) => {
                         <ButtonIcon className="w-6 h-6 text-white" />
                       </button>
 
-                      {showTooltip === index && (
+                      {/* {showTooltip === index && (
                         <div
                           className={`absolute ${tooltipPosition} bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap z-[9999]`}
                         >
@@ -201,7 +201,7 @@ const SplashScreen = ({ onComplete }) => {
                             className={`absolute w-0 h-0 border-l-4 border-r-4 border-transparent ${tooltipArrow}`}
                           ></div>
                         </div>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 );
@@ -254,7 +254,7 @@ const SplashScreen = ({ onComplete }) => {
 
             <button
               onClick={handleSkip}
-              className="animate-bounce bg-white/20 backdrop-blur-sm p-4 rounded-full hover:bg-white/30 transition-all"
+              className="bg-white/20 backdrop-blur-sm p-4 rounded-full hover:bg-white/30 transition-all"
             >
               <ChevronDown className="w-8 h-8 text-white" />
             </button>
@@ -265,7 +265,7 @@ const SplashScreen = ({ onComplete }) => {
       {step < 9 && (
         <button
           onClick={handleSkip}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce-slow"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
           aria-label="Skip animation"
         >
           <div className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all">
