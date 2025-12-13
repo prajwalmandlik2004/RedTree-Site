@@ -139,17 +139,25 @@ const SplashScreen = ({ onComplete }) => {
                 className="w-full h-full object-contain drop-shadow-2xl"
               />
             </div>
-            <p className="text-white text-2xl md:text-2xl text-center leading-relaxed animate-fadeIn px-4 max-w-2xl font-medium" style={{ fontFamily: "Times New Roman, serif" }}>
-              RedTree notes, structures and gives sense to your memories, your notes, your thoughts
-            </p>
+            {step === 5 && (
+              <p
+                className="text-white text-2xl md:text-2xl text-center leading-relaxed px-4 max-w-2xl font-medium opacity-0"
+                style={{
+                  fontFamily: "Times New Roman, serif",
+                  animation: 'fadeIn 1s ease-out 3s forwards'
+                }}
+              >
+                RedTree notes, structures and gives sense to your memories, your notes, your thoughts
+              </p>
+            )}
           </div>
         )}
 
         {step >= 6 && step < 9 && (
-          <div className="animate-fadeIn -mt-50 flex flex-col items-center">
+          <div className="-mt-50 flex flex-col items-center">
             <div className="relative w-40 h-40 mb-8">
               {/* Center Logo Button */}
-              <div className="relative z-10 w-15 h-15 mx-auto animate-fadeIn bg-white rounded-full shadow-2xl flex items-center justify-center">
+              <div className="relative z-10 w-15 h-15 mx-auto bg-white rounded-full shadow-2xl flex items-center justify-center">
                 <img
                   src="/images/hero/redtreelogo.png"
                   alt="RedTree Logo"
@@ -211,7 +219,7 @@ const SplashScreen = ({ onComplete }) => {
         )}
 
         {step >= 9 && (
-          <div className="animate-fadeIn flex flex-col items-center mt-20">
+          <div className="flex flex-col items-center mt-20">
             <div className="relative w-40 h-40 mb-12">
               {/* Center Logo Button */}
               <div className="relative z-10 w-15 h-15 mx-auto bg-white rounded-full shadow-2xl flex items-center justify-center">
@@ -252,17 +260,17 @@ const SplashScreen = ({ onComplete }) => {
               <p className="text-xl md:text-2xl font-bold tracking-widest animate-fadeIn ms-15" style={{ animationDelay: '8s', fontFamily: "Times New Roman, serif" }}>PROTECT</p>
             </div>
 
-            <button
+            {/* <button
               onClick={handleSkip}
               className="bg-white/20 backdrop-blur-sm p-4 rounded-full hover:bg-white/30 transition-all"
             >
               <ChevronDown className="w-8 h-8 text-white" />
-            </button>
+            </button> */}
           </div>
         )}
       </div>
 
-      {step < 9 && (
+      {step === 9 && (
         <button
           onClick={handleSkip}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
